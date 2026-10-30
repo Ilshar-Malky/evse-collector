@@ -1,9 +1,14 @@
 name: Collect EVSE status
 
+# GitHub skips most "*/15" scheduled runs (since 12 Oct the collector ran only about
+# every 4 hours). Fix without any extra account or token: each run now stays alive for
+# about 5.5 hours and collects every 15 minutes inside the job. The schedule below only
+# makes sure a new run is always waiting to take over (concurrency keeps one running
+# and one pending). Public repository = Actions minutes are free.
 on:
   schedule:
-    - cron: "*/15 * * * *"   # every 15 min (UTC); GitHub may delay runs a few minutes
-  workflow_dispatch:          # lets you start a run by hand from the Actions tab
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -15,7 +20,7 @@ concurrency:
 jobs:
   collect:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 355
     steps:
       - uses: actions/checkout@v4
 
@@ -25,23 +30,29 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Collect status changes
+      - name: Collect every 15 minutes for about 5.5 hours
         env:
           ECO_MOVEMENT_TOKEN: ${{ secrets.ECO_MOVEMENT_TOKEN }}
-        run: python collector/collect_changes.py
-
-      - name: Commit new data
+          LOOP_MINUTES: "320"     # total time spent collecting in one run
+          INTERVAL_SECONDS: "900" # 15 minutes
         run: |
           git config user.name "evse-collector-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data
-          if git diff --cached --quiet; then
-            echo "Nothing new to commit"
-            exit 0
-          fi
-          git commit -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3; do
-            git pull --rebase && git push && exit 0
-            sleep 10
+          end=$(( $(date +%s) + LOOP_MINUTES * 60 ))
+          while [ "$(date +%s)" -lt "$end" ]; do
+            started=$(date +%s)
+            git pull -q --rebase || true
+            python collector/collect_changes.py || echo "Collector failed this round, retrying next round"
+            git add data
+            if ! git diff --cached --quiet; then
+              git commit -q -m "data: $(date -u +%Y-%m-%dT%H:%MZ)"
+              for i in 1 2 3; do
+                git pull -q --rebase && git push -q && break
+                sleep 10
+              done
+            fi
+            elapsed=$(( $(date +%s) - started ))
+            wait=$(( INTERVAL_SECONDS - elapsed % INTERVAL_SECONDS ))
+            [ $(( $(date +%s) + wait )) -lt "$end" ] || break
+            sleep "$wait"
           done
-          exit 1
