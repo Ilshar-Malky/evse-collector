@@ -1,9 +1,11 @@
-name: Explore static feed
+name: Static chargers
 
-# Runs the static explorer ON GITHUB, using the token already saved in the
-# repository secrets (no token needed on your PC). Start it by hand:
-# Actions -> "Explore static feed" -> Run workflow.
+# Downloads the static data of every charger (location, operator, power) with the
+# token saved in the repository secrets. Once a week (Monday 04:10 UTC) + by hand:
+# Actions -> "Static chargers" -> Run workflow.
 on:
+  schedule:
+    - cron: "10 4 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -14,9 +16,9 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  explore:
+  static:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
@@ -26,22 +28,17 @@ jobs:
 
       - run: pip install -r requirements.txt
 
-      - name: Explore static feed
+      - name: Download static charger data
         env:
           ECO_MOVEMENT_TOKEN: ${{ secrets.ECO_MOVEMENT_TOKEN }}
-        run: |
-          python collector/explore_static.py
-          mkdir -p data/static
-          mv static_structure.txt data/static/
-          gzip -c static_raw_page1.json > data/static/static_raw_page1.json.gz
-          rm static_raw_page1.json
+        run: python collector/fetch_static.py
 
       - name: Commit results
         run: |
           git config user.name "evse-collector-bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/static
-          git commit -m "static: structure report $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          git commit -m "static: chargers $(date -u +%Y-%m-%d)" || exit 0
           for i in 1 2 3; do
             git pull --rebase && git push && exit 0
             sleep 10
