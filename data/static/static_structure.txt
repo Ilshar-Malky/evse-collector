@@ -1,0 +1,109 @@
+TOP-LEVEL KEYS: modelBaseVersionG, profileNameG, profileVersionG, aegiEnergyInfrastructureTablePublication, aegiEnergyInfrastructureStatusPublication, exchangeInformation
+
+=== modelBaseVersionG ===
+modelBaseVersionG. = '3'
+
+=== profileNameG ===
+profileNameG. = 'AFIR Energy Infrastructure'
+
+=== profileVersionG ===
+profileVersionG. = '01-00-00'
+
+=== aegiEnergyInfrastructureTablePublication ===
+aegiEnergyInfrastructureTablePublication.lang = 'en'
+aegiEnergyInfrastructureTablePublication.publicationTime = '2026-10-30T12:41:40Z'
+aegiEnergyInfrastructureTablePublication.publicationCreator.country = 'NL'
+aegiEnergyInfrastructureTablePublication.publicationCreator.nationalIdentifier = 'NL-EC0'
+aegiEnergyInfrastructureTablePublication.headerInformation.confidentiality.value = 'noRestriction'
+aegiEnergyInfrastructureTablePublication.headerInformation.informationStatus.value = 'real'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].idG = '019c04a9-93ed-7df9-88fc-14db9d22060d'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].versionG = '1'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].idG = 'Eneco-9E733663-969D-4A1B-A690-47941E26BFBC'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].versionG = '1'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].brand.values[].lang = 'be'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].brand.values[].value = 'Eneco eMobility HOOGSTRAAT 24 C, 8554 SINT-DENIJS, België'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.coordinatesForDisplay.latitude = 50.78419
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.coordinatesForDisplay.longitude = 3.35766
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.timeZone = 'Europe/Brussels'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.postcode = '8554'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.city.values[].lang = 'be'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.city.values[].value = 'SINT-DENIJS'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.countryCode = 'BE'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.addressLine[].order = 0
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.addressLine[].type.value = 'street'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.addressLine[].text.values[].lang = 'be'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].entrance[].locAreaLocation.locLocationExtensionG.FacilityLocation.address.addressLine[].text.values[].value = 'HOOGSTRAAT 24 C'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyDistributor.afacAnOrganisation.name.values[].lang = 'be'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyDistributor.afacAnOrganisation.name.values[].value = 'Eneco'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].idG = '9E733663-969D-4A1B-A690-47941E26BFBC'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].versionG = '1'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].totalMaximumPower = 22000
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].authenticationAndIdentificationMethods[].value = 'apps'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].numberOfRefillPoints = 1
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].energyDistributor.afacAnOrganisation.name.values[].lang = 'be'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].energyDistributor.afacAnOrganisation.name.values[].value = 'Eneco'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].serviceType[].serviceType.value = 'unattended'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.idG = 'BE-ENE-EENECO_G44971-1'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.versionG = '1'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.deliveryUnit.value = 'kWh'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.currentType.value = 'ac'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.usageType[].value = 'electricVehicle'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.numberOfConnectors = 1
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.availableVoltage[] = 230
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.availableChargingPower[] = 22000
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.smartRechargingServices[].value = 'remoteMonitoring'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].externalIdentifier[].identifier = 'BE*ENE*EENECO*G44971*1'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].externalIdentifier[].typeOfIdentifier.value = 'extendedG'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].externalIdentifier[].typeOfIdentifier.extendedValueG = 'evseId'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].connectorType.value = 'iec62196T2'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].connectorFormat.value = 'cableMode3'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].maxPowerAtSocket = 22000
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].voltage = 230
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.connector[].maximumCurrent = 32
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].idG = 'CREGWPVG'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].ratePolicy.value = 'adHoc'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].lastUpdated = '2026-09-29T02:02:37Z'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].applicableCurrency[] = 'EUR'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].energyPrice[].priceGroupIndex = 0
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].energyPrice[].priceType.value = 'pricePerKWh'
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].energyPrice[].value = 0.3725
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].energyPrice[].taxIncluded = False
+aegiEnergyInfrastructureTablePublication.energyInfrastructureTable[].energyInfrastructureSite[].energyInfrastructureStation[].refillPoint[].aegiElectricChargingPoint.energyProduct[].aegiElectricEnergy.energyRate[].energyPrice[].taxRate = 21
+
+=== aegiEnergyInfrastructureStatusPublication ===
+aegiEnergyInfrastructureStatusPublication.lang = 'en'
+aegiEnergyInfrastructureStatusPublication.publicationTime = '2026-10-30T12:41:40Z'
+aegiEnergyInfrastructureStatusPublication.publicationCreator.country = 'NL'
+aegiEnergyInfrastructureStatusPublication.publicationCreator.nationalIdentifier = 'NL-EC0'
+aegiEnergyInfrastructureStatusPublication.headerInformation.confidentiality.value = 'noRestriction'
+aegiEnergyInfrastructureStatusPublication.headerInformation.informationStatus.value = 'real'
+aegiEnergyInfrastructureStatusPublication.tableReference[].targetClass = 'EnergyInfrastructureTable'
+aegiEnergyInfrastructureStatusPublication.tableReference[].idG = '019c04a9-93ed-7df9-88fc-14db9d22060d'
+aegiEnergyInfrastructureStatusPublication.tableReference[].versionG = '1'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].reference.targetClass = 'FacilityObject'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].reference.idG = 'Eneco-9E733663-969D-4A1B-A690-47941E26BFBC'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].reference.versionG = '1'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].lastUpdated = '2026-10-30T06:49:39Z'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].reference.targetClass = 'FacilityObject'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].reference.idG = '9E733663-969D-4A1B-A690-47941E26BFBC'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].reference.versionG = '1'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].lastUpdated = '2026-10-30T06:49:39Z'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.reference.targetClass = 'FacilityObject'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.reference.idG = 'BE-ENE-EENECO_G44971-1'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.reference.versionG = '1'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.lastUpdated = '2026-10-30T06:49:39Z'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.status.value = 'available'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].lastUpdated = '2026-09-29T02:02:37Z'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyRateReference.targetClass = 'EnergyRate'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyRateReference.idG = 'CREGWPVG'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyPrice[].priceGroupIndex = 0
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyPrice[].priceType.value = 'pricePerKWh'
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyPrice[].value = 0.3725
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyPrice[].taxIncluded = False
+aegiEnergyInfrastructureStatusPublication.energyInfrastructureSiteStatus[].energyInfrastructureStationStatus[].refillPointStatus[].aegiElectricChargingPointStatus.energyRateUpdate[].energyPrice[].taxRate = 21
+
+=== exchangeInformation ===
+exchangeInformation.exchangeContext.codedExchangeProtocol.value = 'snapshotPush'
+exchangeInformation.exchangeContext.exchangeSpecificationVersion = '3.0'
+exchangeInformation.dynamicInformation.exchangeStatus.value = 'online'
+exchangeInformation.dynamicInformation.messageGenerationTimestamp = '2026-10-30T12:41:40.028616872Z'
