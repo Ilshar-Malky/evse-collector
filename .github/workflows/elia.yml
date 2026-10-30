@@ -1,0 +1,44 @@
+name: Elia grid data
+
+# Second source: Elia Open Data (grid load, solar per province, wind), no token.
+# Downloads the whole period since the start of the collection, every day at 05:20 UTC
+# and by hand: Actions -> "Elia grid data" -> Run workflow.
+on:
+  schedule:
+    - cron: "20 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: elia
+  cancel-in-progress: false
+
+jobs:
+  elia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install requests pandas
+
+      - name: Download Elia data
+        run: python collector/download_elia.py 2026-10-12 "$(date -u -d tomorrow +%F)"
+
+      - name: Commit results
+        run: |
+          git config user.name "evse-collector-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/elia
+          git commit -m "elia: $(date -u +%Y-%m-%d)" || exit 0
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1
