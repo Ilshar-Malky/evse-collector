@@ -1,0 +1,49 @@
+name: Explore static feed
+
+# Runs the static explorer ON GITHUB, using the token already saved in the
+# repository secrets (no token needed on your PC). Start it by hand:
+# Actions -> "Explore static feed" -> Run workflow.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: static
+  cancel-in-progress: false
+
+jobs:
+  explore:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install -r requirements.txt
+
+      - name: Explore static feed
+        env:
+          ECO_MOVEMENT_TOKEN: ${{ secrets.ECO_MOVEMENT_TOKEN }}
+        run: |
+          python collector/explore_static.py
+          mkdir -p data/static
+          mv static_structure.txt data/static/
+          gzip -c static_raw_page1.json > data/static/static_raw_page1.json.gz
+          rm static_raw_page1.json
+
+      - name: Commit results
+        run: |
+          git config user.name "evse-collector-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/static
+          git commit -m "static: structure report $(date -u +%Y-%m-%dT%H:%MZ)" || exit 0
+          for i in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            sleep 10
+          done
+          exit 1
